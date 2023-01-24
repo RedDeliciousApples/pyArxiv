@@ -1,6 +1,17 @@
 import arxiv, logging, os
 from difflib import SequenceMatcher
 print("Import success!")
+"""
+to use later
+class CleanExit(object):
+  def __enter__(self):
+    return self
+  def __exit__(self, exc_type, exc_value, exc_tb):
+    if exc_type is KeyboardInterrupt:
+      return True
+    return exc_type is None
+with CleanExit():
+"""
 while True:
   choice = input("Enable info level logging? [y/n]\n")
   if choice == "y":
