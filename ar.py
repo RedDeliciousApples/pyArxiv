@@ -1,7 +1,19 @@
 import arxiv, logging, os
 from difflib import SequenceMatcher
 print("Import success!")
-logging.basicConfig(level=logging.INFO)
+while True:
+  choice = input("Enable info level logging? [y/n]\n")
+  if choice == "y":
+    logging.basicConfig(level=logging.INFO)
+    print("Logging is now active.")
+    break
+  elif choice == "n":
+    print("Logging disabled.")
+    break
+  else:
+    print("Unrecognized input.\n")
+  
+
 print("Logging reaady.")
 
 smallClient = arxiv.Client(5, 10, 3)
