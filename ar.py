@@ -21,12 +21,13 @@ for result in search.results():
       if SequenceMatcher(None, file, result.title).ratio() > 0.5:
         print("Already exists, skipping")
         skipnext = True
-if skipnext  == False:
-  print("Downloading...")
-  paper = next(search.results())
-  paper.download_pdf()
-  print("Done, moving on...")
-else:
+  if skipnext  == False:
+    print("Downloading...")
+    paper = next(search.results())
+    paper.download_pdf()
+    print("Done, moving on...")
+  else:
     print("Skipped:" + result.title)
     paper = next(search.results())
+    print("Next paper should be: ")
 print("All done, have a nice day.")
